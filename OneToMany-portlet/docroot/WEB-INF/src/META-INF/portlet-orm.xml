@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.meera.db.model.impl.AddressModelImpl">
+		<attributes>
+			<id name="addressId" />
+			<basic name="street1" />
+			<basic name="street2" />
+			<basic name="city" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.meera.db.model.impl.EmployeeModelImpl">
+		<attributes>
+			<id name="employeeId" />
+			<basic name="employeeName" />
+			<basic name="employeeDesignation" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.meera.db.model.impl.AddressImpl" name="Address">
+		<table name="TEST_Address" />
+		<attributes />
+	</entity>
+	<entity class="com.meera.db.model.impl.EmployeeImpl" name="Employee">
+		<table name="TEST_Employee" />
+		<attributes />
+	</entity>
+</entity-mappings>

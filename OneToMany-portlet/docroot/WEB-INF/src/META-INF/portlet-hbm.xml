@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.meera.db.model.Address" />
+	<import class="com.meera.db.model.Employee" />
+	<class name="com.meera.db.model.impl.AddressImpl" table="TEST_Address">
+		<id name="addressId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="street1" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="street2" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.meera.db.model.impl.EmployeeImpl" table="TEST_Employee">
+		<id name="employeeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="employeeName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="employeeDesignation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+</hibernate-mapping>
