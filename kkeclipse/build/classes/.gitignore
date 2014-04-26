@@ -1,5 +1,3 @@
-/com
-/struts.xml
 /AdminMessages.properties
 /AdminMessages_de.properties
 /AdminMessages_es.properties
@@ -11,6 +9,7 @@
 /Messages_fr.properties
 /Messages_it.properties
 /Messages_pt.properties
+/com
 /konakart-7.2.0.0.properties
 /konakart-logging.properties
 /konakart.properties
@@ -18,3 +17,4 @@
 /konakart_axis_client.properties
 /konakart_velocity.properties
 /log4j.properties
+/struts.xml
