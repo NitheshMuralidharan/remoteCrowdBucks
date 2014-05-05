@@ -1,0 +1,295 @@
+<?xml version="1.0"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+
+	<!-- Sample Struts -->
+
+	<definition name="portlet.sample_struts_portlet"
+		path="/html/portlet/sample_struts_portlet/template.jsp">
+		<put name="title" value="Hello World" />
+		<put name="header" value="/html/portlet/sample_struts_portlet/nav.jsp" />
+		<put name="menu" value="/html/portlet/sample_struts_portlet/homemenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/home.jsp" />
+		<put name="footer" value="/html/portlet/sample_struts_portlet/footer.jsp" />
+	</definition>
+
+
+
+	<!-- New Code Start -->
+	<definition name="portlet.sample_struts_portlet.home"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/homemenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/home.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.Banking"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/acc_summary.jsp" />
+	</definition>
+
+	<!-- INSIDE BANKING MENU -->
+	<definition name="portlet.sample_struts_portlet.banking.Crowdbucks_acc"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/crowdbucks_acc.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.banking.Savings_acc"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/savings_acc.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.banking.To_User"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/paytuser.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.banking.To_User_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/paytuser_review.jsp" />
+	</definition>
+	<definition name="portlet.sample_struts_portlet.banking.paytuser_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/paytuser_success.jsp" />
+	</definition>
+
+
+	<definition name="portlet.sample_struts_portlet.banking.To_Self"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/paytself.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.banking.To_System"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/paytsys.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.banking.To_System_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/paytsys_review.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.banking.paytsys_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/bankingmenu.jsp" />
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/paytsys_success.jsp" />
+	</definition>
+
+	<!-- BANKING ENDS -->
+
+	<!-- SEARCH USERS -->
+
+	<definition name="portlet.sample_struts_portlet.searchuser"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/um_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/search-user.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.searchuser_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/um_menu.jsp" />
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/search_user_success.jsp" />
+	</definition>
+	<!--SEARCH USER ENDS -->
+	<!--SEARCH CONTACTS -->
+
+	<definition name="portlet.sample_struts_portlet.searchcontacts"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/um_menu.jsp" />
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/search-contacts.jsp" />
+	</definition>
+	<definition name="portlet.sample_struts_portlet.search_contacts_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/um_menu.jsp" />
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/search-contacts-success.jsp" />
+	</definition>
+	<!-- SEARCH CONTACT ENDS -->
+	<!-- SEARCH AD -->
+	<definition name="portlet.sample_struts_portlet.searchad"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/market_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/search_adv.jsp" />
+	</definition>
+	
+	<definition name="portlet.sample_struts_portlet.searchad_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/market_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/search_adv_success.jsp" />
+	</definition>
+	
+	<!-- INSIDE THE PERSONAL PAGE -->
+	<definition name="portlet.sample_struts_portlet.personal"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/prof_display.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.addresses"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/add_display.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.phones"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/phones.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.profile-images"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/profile-images.jsp" />
+	</definition>
+
+<!--Ankit Add Message  -->
+	<definition name="portlet.sample_struts_portlet.message" extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/profile-messages.jsp" />
+	</definition>
+	
+	<!--Ankit Add Sent  -->
+	<definition name="portlet.sample_struts_portlet.message-sent" extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/profile-messages-sent.jsp" />
+	</definition>
+	
+	<!--Ankit Add Trash  -->
+	<definition name="portlet.sample_struts_portlet.message-trash" extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/profile-messages-trash.jsp" />
+	</definition>
+	
+	<!--Ankit Add Notification  -->
+	<definition name="portlet.sample_struts_portlet.notifications" extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/personal_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/notification.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.system_management"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/sm_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/configuaration.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.report"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/report_menu.jsp" />
+		<put name="body" value="/html/portlet/sample_struts_portlet/sys_reports.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.report_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="menu" value="/html/portlet/sample_struts_portlet/report_menu.jsp" />
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/sys_reportsuccess.jsp" />
+	</definition>
+
+
+	<!-- New Code End -->
+
+	<definition name="portlet.sample_struts_portlet.edit"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/edit.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.help"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/help.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.nested"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/nested.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.nested_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/nested_success.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.sample_exception"
+		extends="portlet.sample_struts_portlet">
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/sample_exception.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.subscribe"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/subscribe.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.subscribe_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/subscribe_success.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.unsubscribe"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/unsubscribe.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.unsubscribe_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="body"
+			value="/html/portlet/sample_struts_portlet/unsubscribe_success.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.upload"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/upload.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.upload_success"
+		extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/upload_success.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet_failure"
+		extends="portlet.sample_struts_portlet">
+		<put name="header" value=""></put>
+		<put name="menu" value=""></put>
+		<put name="footer" value=""></put>
+		<put name="body" value="/html/portlet/sample_struts_portlet/Login.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.view"
+		extends="portlet.sample_struts_portlet">
+		<put name="header" value=""></put>
+		<put name="menu" value=""></put>
+		<put name="footer" value=""></put>
+		<put name="body" value="/html/portlet/sample_struts_portlet/Login.jsp" />
+	</definition>
+	<!-- <definition name="portlet.sample_struts_portlet.logout" extends="portlet.sample_struts_portlet"> 
+		<put name="header" value=""></put> <put name="menu" value=""></put> <put 
+		name="footer" value=""></put> <put name="body" value="/html/portlet/sample_struts_portlet/logout.jsp" 
+		/> </definition> -->
+
+	<definition name="portlet.sample_struts_portlet.x" extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/x.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.y" extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/y.jsp" />
+	</definition>
+
+	<definition name="portlet.sample_struts_portlet.z" extends="portlet.sample_struts_portlet">
+		<put name="body" value="/html/portlet/sample_struts_portlet/z.jsp" />
+	</definition>
+</tiles-definitions>

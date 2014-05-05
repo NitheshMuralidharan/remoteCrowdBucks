@@ -1,0 +1,262 @@
+<?xml version="1.0"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+
+	<!-- Forms Beans -->
+
+	<form-beans>
+		<form-bean name="nestedForm"
+			type="com.liferay.samplestruts.struts.form.NestedForm" />
+		<form-bean name="subscribeForm"
+			type="com.liferay.samplestruts.struts.form.SubscribeForm" />
+		<form-bean name="unsubscribeForm"
+			type="com.liferay.samplestruts.struts.form.UnsubscribeForm" />
+		<form-bean name="uploadForm"
+			type="com.liferay.samplestruts.struts.form.UploadForm" />
+		<form-bean name="report"
+			type="com.liferay.samplestruts.struts.form.report" />
+		<form-bean name="SearchUserForm"
+			type="com.liferay.samplestruts.struts.form.SearchUserForm" />
+		<form-bean name="LoginForm"
+			type="com.liferay.samplestruts.struts.form.LoginForm" />
+		<form-bean name="Pay2UserForm"
+			type="com.liferay.samplestruts.struts.form.Pay2UserForm" />
+		<form-bean name="Pay2SysForm"
+			type="com.liferay.samplestruts.struts.form.Pay2SysFrom" />
+		<form-bean name="SearchAdForm"
+			type="com.liferay.samplestruts.struts.form.SearchAdForm" />
+        <form-bean name="SearchContactsForm"
+            type="com.liferay.samplestruts.struts.form.SearchContactsForm"/>
+</form-beans>
+
+
+	<!-- Action Mappings -->
+
+	<action-mappings>
+
+		<!-- Sample Struts -->
+
+		<action path="/sample_struts_portlet/edit" forward="portlet.sample_struts_portlet.edit" />
+
+		<action path="/sample_struts_portlet/help" forward="portlet.sample_struts_portlet.help" />
+		<!-- New code -->
+
+		<action path="/sample_struts_portlet/home" forward="portlet.sample_struts_portlet.home" />
+
+		<action path="/sample_struts_portlet/contact/render"></action>
+		<!-- <action path="/sample_struts_portlet/banking" forward="portlet.sample_struts_portlet.Banking" 
+			/> -->
+
+		<action path="/sample_struts_portlet/banking"
+			type="com.liferay.samplestruts.struts.render.AcountSummary" name="AcountSummary"
+			scope="session" validate="true" input="portlet.sample_struts_portlet.sys_reports">
+			<forward name="portlet.sample_struts_portlet.Banking" path="portlet.sample_struts_portlet.Banking"
+				redirect="true" />
+		</action>
+		<!--INSIDE BANKING -->
+
+		<action path="/sample_struts_portlet/banking/crowdbucks_acc"
+			forward="portlet.sample_struts_portlet.banking.Crowdbucks_acc" />
+
+		<action path="/sample_struts_portlet/banking/savings_acc"
+			forward="portlet.sample_struts_portlet.banking.Savings_acc" />
+
+		<action path="/sample_struts_portlet/banking/to_self" forward="portlet.sample_struts_portlet.banking.To_Self" />
+
+		<!--BANKING ENDS -->
+
+		<action path="/sample_struts_portlet/system_management"
+			forward="portlet.sample_struts_portlet.system_management" />
+
+		<action path="/sample_struts_portlet/marketplace" forward="portlet.sample_struts_portlet.marketplace" />
+		<!--Action created inside personal tab -->
+
+		<!--Ankit Change In Profile -->
+		<action path="/sample_struts_portlet/personal"
+			type="com.liferay.samplestruts.struts.render.ProfileAction" name="personal"
+			scope="session" validate="true">
+			<forward name="portlet.sample_struts_portlet.personal" path="portlet.sample_struts_portlet.personal"
+				redirect="true" />
+		</action>
+
+		<!--Ankit Change In Address -->
+		<action path="/sample_struts_portlet/addresses"
+			type="com.liferay.samplestruts.struts.render.AddressAction" name="personal"
+			scope="session" validate="true">
+			<forward name="portlet.sample_struts_portlet.addresses" path="portlet.sample_struts_portlet.addresses"
+				redirect="true" />
+		</action>
+
+		<!--Ankit Change In Phone -->
+		<action path="/sample_struts_portlet/phones"
+			type="com.liferay.samplestruts.struts.render.PhoneAction" name="personal"
+			scope="session" validate="true">
+			<forward name="portlet.sample_struts_portlet.phones" path="portlet.sample_struts_portlet.phones"
+				redirect="true" />
+		</action>
+
+		<!--Ankit Add Message -->
+		<action path="/sample_struts_portlet/messages"
+			type="com.liferay.samplestruts.struts.render.MassageAction" name="personal"
+			scope="session" validate="true">
+			<forward name="portlet.sample_struts_portlet.message" path="portlet.sample_struts_portlet.message"
+				redirect="true" />
+		</action>
+
+		<!--Ankit Add Sent -->
+		<action path="/sample_struts_portlet/message-sent"
+			type="com.liferay.samplestruts.struts.render.SentMassageAction" name="personal"
+			scope="session" validate="true">
+			<forward name="portlet.sample_struts_portlet.message-sent"
+				path="portlet.sample_struts_portlet.message-sent" redirect="true" />
+		</action>
+
+		<!--Ankit Add Trash -->
+		<action path="/sample_struts_portlet/message-trash"
+			type="com.liferay.samplestruts.struts.render.TrashMassageAction"
+			name="personal" scope="session" validate="true">
+			<forward name="portlet.sample_struts_portlet.message-trash"
+				path="portlet.sample_struts_portlet.message-trash" redirect="true" />
+		</action>
+
+		<!--Ankit Add Notification -->
+		<action path="/sample_struts_portlet/notifications"
+			type="com.liferay.samplestruts.struts.render.NotificationAction"
+			name="personal" scope="session" validate="true">
+			<forward name="portlet.sample_struts_portlet.notifications"
+				path="portlet.sample_struts_portlet.notifications" redirect="true" />
+		</action>
+
+		<action path="/sample_struts_portlet/profile-images" forward="portlet.sample_struts_portlet.profile-images" />
+
+		<action path="/sample_struts_portlet/report/render"
+			type="com.liferay.samplestruts.struts.render.ReportAction" name="report"
+			scope="session" validate="true" input="portlet.sample_struts_portlet.sys_reports">
+			<forward name="portlet.sample_struts_portlet.report" path="portlet.sample_struts_portlet.report"
+				redirect="true" />
+		</action>
+
+		<action path="/sample_struts_portlet/report/action"
+			type="com.liferay.samplestruts.struts.action.ReportAction" name="report"
+			scope="session" validate="true" input="portlet.sample_struts_portlet.sys_reports">
+			<forward name="/sample_struts_portlet/report_success"
+				path="/portlet_action/sample_struts_portlet/report_success" />
+		</action>
+
+		<action path="/sample_struts_portlet/users/render"
+			type="com.liferay.samplestruts.struts.render.SearchUserAction">
+			<forward name="portlet.sample_struts_portlet.searchuser"
+				path="portlet.sample_struts_portlet.searchuser" />
+		</action>
+
+		<action path="/sample_struts_portlet/users/action"
+			type="com.liferay.samplestruts.struts.action.SearchUserAction" name="SearchUserForm"
+			scope="session" validate="true" input="portlet.sample_struts_portlet.subscribe">
+			<forward name="/sample_struts_portlet/searchuser_success"
+				path="portlet.sample_struts_portlet.searchuser_success" redirect="true" />
+		</action>
+<!-- PAY TO USERS -->
+		<action path="/sample_struts_portlet/banking/to_user"
+			type="com.liferay.samplestruts.struts.render.Pay2UserAction" name="Pay2UserForm">
+			<forward name="portlet.sample_struts_portlet.pay2user" path="portlet.sample_struts_portlet.banking.To_User" />
+		</action>
+		<action path="/sample_struts_portlet/banking/action/to_user"
+			type="com.liferay.samplestruts.struts.action.Pay2UserAction" name="Pay2UserForm"
+			scope="session" validate="false" input="portlet.sample_struts_portlet.paytuser">
+			<forward name="/sample_struts_portlet/pay2user"
+				path="portlet.sample_struts_portlet.banking.To_User_success"
+				redirect="true" />
+		</action>
+
+		<action path="/sample_struts_portlet/banking/paytuser_success"
+			forward="portlet.sample_struts_portlet.banking.paytuser_success" />
+
+<!-- PAY TO USER ENDS -->
+<!-- RENDER URL IN BANKING FOR PAY TO SYSTEM -->
+		<action path="/sample_struts_portlet/banking/to_system"
+			type="com.liferay.samplestruts.struts.render.Pay2SysAction">
+			<forward name="portlet.sample_struts_portlet.pay2sys"
+				path="portlet.sample_struts_portlet.banking.To_System" />
+		</action>
+
+		<action path="/sample_struts_portlet/banking/action/paytsys"
+			type="com.liferay.samplestruts.struts.action.Pay2SysAction" name="Pay2SysForm"
+			scope="session" validate="false" input="portlet.sample_struts_portlet.paytsys">
+			<forward name="/sample_struts_portlet/pay2sys_success"
+				path="portlet.sample_struts_portlet.banking.To_System_success" />
+		</action>
+
+		<action path="/sample_struts_portlet/banking/paytsys_success"
+			forward="portlet.sample_struts_portlet.banking.paytsys_success" />
+<!-- PAY TO SYSTEM ENDS -->
+<!-- MY ADVERTISEMENT -->
+			<action path="/sample_struts_portlet/advertise/render"
+			type="com.liferay.samplestruts.struts.render.SearchAdAction">
+			<forward name="portlet.sample_struts_portlet.searchad" path="portlet.sample_struts_portlet.searchad" />
+		</action>
+		<action path="/sample_struts_portlet/advertise/action"
+			type="com.liferay.samplestruts.struts.action.SearchAdAction" name="SearchAdForm"
+			scope="session" validate="true">
+			<forward name="/sample_struts_portlet/search-ad-success"
+				path="portlet.sample_struts_portlet.searchad_success" redirect="true" />
+		</action>
+<!-- MY ADVERTISEMENT ENDS -->
+<!-- MY CONTACTS -->
+		<action path="/sample_struts_portlet/contact/render"
+			type="com.liferay.samplestruts.struts.render.SearchContactsAction">
+			<forward name="portlet.sample_struts_portlet.search_contacts"
+				path="portlet.sample_struts_portlet.searchcontacts" />
+		</action>
+		<action path="/sample_struts_portlet/contact/action"
+			type="com.liferay.samplestruts.struts.action.SearchContactsAction"
+			name="SearchContactsForm" scope="session" validate="true">
+			<forward name="/sample_struts_portlet/search_contacts_success"
+				path="portlet.sample_struts_portlet.search_contacts_success"
+				redirect="true" />
+		</action>
+<!-- MY CONTACTS ENDS -->
+<!-- LOGIN FORM -->
+		<action path="/html/login"
+			type="com.liferay.samplestruts.struts.action.LoginAction" name="LoginForm"
+			scope="session" validate="true"
+			input="/html/portlet/sample_struts_portlet/Login.jsp">
+			<forward name="/sample_struts_portlet/login_success" path="portlet.sample_struts_portlet" />
+			<forward name="/sample_struts_portlet/login_failure" path="portlet.sample_struts_portlet_failure" />
+		</action>
+
+		<action path="/sample_struts_portlet/view"
+			type="com.liferay.samplestruts.struts.render.LoginAction">
+			<forward name="portlet.sample_struts_portlet.view" path="portlet.sample_struts_portlet.view" />
+		</action>
+
+		<action path="/sample_struts_portlet/logout"
+			type="com.liferay.samplestruts.struts.action.LogoutAction">
+			<forward name="portlet.sample_struts_portlet.logout" path="portlet.sample_struts_portlet.logout" />
+		</action>
+
+	</action-mappings>
+<!-- LOGIN FORM ENDS -->
+	<!-- Custom Request Processor -->
+
+	<controller
+		processorClass="org.apache.portals.bridges.struts.PortletTilesRequestProcessor" />
+
+	<!-- Message Resources -->
+	<message-resources parameter="content.test.Language" />
+
+	<!-- Tiles Plugin -->
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+		<set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />
+		<set-property property="moduleAware" value="true" />
+		<set-property property="definitions-parser-validate"
+			value="true" />
+	</plug-in>
+	<!-- Validator Plugin -->
+
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+		<set-property property="pathnames"
+			value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+</struts-config>
